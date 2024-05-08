@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/css/for_login_signup.css">
+</head>
+
+<body>
+    <div class="login">
+        <div class="container">
+            <div class="main">
+                <div class="img">
+                    <img src="../../static/images/for_signup.png" alt="">
+                </div>
+                <div class="content">
+                    <h2>Sign Up</h2>
+                    <form action="">
+
+                        <label for="userName">UserName</label>
+                        <input type="text" placeholder="Username" id="userName" required maxlength="100" minlength="10">
+                        <label for="email">EMAIL</label>
+                        <input type="email" placeholder="Email" id="email" required>
+                        <label for="passWord1">PASSWORD</label>
+                        <input type="password" placeholder="Password" id="passWord1" minlength="8" maxlength="50"
+                            required>
+                        <label for="passWord2">CONFIRM PASSWORD</label>
+                        <input type="password" placeholder="Confirm Password" id="passWord2" minlength="8"
+                            maxlength="50" required>
+                        <div class="remember">
+                            <div class="lab">
+                                <input type="checkbox" id="ch">
+                                <label for="ch"> I agree to use the <a href="#">User Agreement</a> and <p><a
+                                            href="#">Privacy policy</a></p></label>
+                            </div>
+                        </div>
+
+                        <button class="btn" id="but" type="submit">Create your account</button>
+                        <p class="first">OR</p>
+                    </form>
+
+
+                    <p class="sign" id="green">Already Registered?<a href="Login.html">Login</a></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

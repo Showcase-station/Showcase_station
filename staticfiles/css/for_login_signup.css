@@ -1,0 +1,135 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+h2{
+    text-align: center;
+}
+.login{
+    position: relative;
+    min-height: 100vh;
+    padding: 0px 40px;
+    justify-content: center;
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    align-items: center;
+  
+}
+.container{
+    max-width:900px;
+    margin: 0 auto;
+}
+
+.login h2{
+    color: black;
+    margin-bottom: 5px;
+    font-size: 30px;
+    font-weight: 500;
+}
+.login .main{
+    position: relative;
+    display: flex;
+    margin: 30px 0;
+}
+.content{
+    flex-basis: 50%;
+    padding: 3EM 3EM;
+    background:#fff;
+    box-shadow: 2px 9px 49px  rgba(0,0,0,0.1);
+    
+}
+.img{
+    flex-basis: 50%;
+    background-color: #f4f9fd;
+    align-items: center;
+    display: grid;
+   
+}
+
+.img img{
+    max-width: 100%;
+    height: 100%;
+   object-fit:fill
+}
+p{
+    color:black;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.btn:hover,
+button:hover{
+    transition: 0.7s ease-in;
+    background:  #ff2e2cff
+  
+}
+.login form{
+    margin: 30px 0;
+}
+.login input{
+    outline: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-stretch: 16px;
+    color: rgba(0, 0, 0, 0.943);
+    text-align: left;
+    padding: 14px 8px;
+    width: 100%;
+    display: inline-block;
+    border: none;
+    background-color: #f7fafc;
+    transition: 0.3s ease;
+}
+.login input:focus{
+    background-color: transparent;
+    border: 1px solid #4e34b6;
+}
+.login button{
+    font-size: 17px;
+    color: #fff;
+    width: 100%;
+    border: none;
+    padding: 14px 15px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+  
+   background-color:rgba(255, 48, 44, 0.783)
+}
+.remember{
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-between;
+}
+.remember input{
+    width: fit-content;
+    margin-right: 0;
+    font-size: 6px;
+    accent-color:   #ff2e2cff
+}
+a{
+    color:   rgba(255, 48, 44, 0.808)
+}
+
+ a:hover{
+    color: #ff2e2cff
+}
+.first{
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding: 7px;
+}
+@media (max-width:700px){
+    .login .main{
+        flex-direction: column;
+    }
+    .login form{
+        margin: 30px 0 10px;
+    }
+    .img{
+        order: 2;
+    }
+}

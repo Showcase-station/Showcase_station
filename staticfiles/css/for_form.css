@@ -1,0 +1,112 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0%;
+    outline: none;
+    border: none;
+    font-family: Helvetica, sans-serif;
+    text-decoration: none;
+   
+}
+body{
+    background-color: rgba(255, 0, 0, 0.088);
+}
+img{
+  width: 210px;
+  height: 100%;
+}
+a{
+  width: fit-content; 
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 17px;
+    background-color: white;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    padding: 60px 0 40px 100px;
+    margin-left:7px;
+    height: 440px;
+    background: linear-gradient(to right, #0241fbff,  blueviolet);
+    gap: 12px;
+    h1,p{
+    color: white;
+    }
+   
+h1{
+    font-weight: 900;
+    font-size: 60px;
+   
+}
+    p{
+        font-size: 22px;
+       max-width: 920px;
+       margin-right: 15px;
+    }
+    border-bottom-right-radius: 1000px;
+}
+.portfolio{
+    min-height: 500px;
+    position: relative;
+    top: -100px;
+    max-width: 900px;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.sec{
+    display: flex;
+    justify-content: space-between;
+}
+label{
+    display: block;
+    font-size: 30px;
+    font-weight: 600;
+}
+.name1{
+    display: flex;
+    flex-direction: column;
+   
+    width: 48%;
+  
+}
+input{
+    width: 100%;
+    padding: 10px;
+    height: 55px;
+    border: 1px solid;
+    margin: 20px 0;
+}
+
+.cat{
+    border-bottom: 1px solid;
+    padding-bottom: 15px;
+}
+.educProject{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    input{
+       max-width:470px;
+       border: none;
+     
+    }
+    ::placeholder{
+        text-align: center;
+     }
+    button{
+        background-color: red;
+        height: 52px;
+       width: 250px;
+       color: white;
+       font-size: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    border-bottom: 1px solid;
+}

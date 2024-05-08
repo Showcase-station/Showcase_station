@@ -1,0 +1,331 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0%;
+  outline: none;
+  border: none;
+  font-family: Helvetica, sans-serif;
+  text-decoration: none;
+  color: black;
+
+}
+
+img {
+  width: 200px;
+  height: 100%;
+}
+
+a {
+  width: fit-content;
+}
+
+.first {
+  display: flex;
+  max-width: 1090px;
+  justify-content: space-between;
+  margin: 10px auto;
+  max-height: 40px;
+}
+
+.links,
+.head {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+
+  a {
+    margin-top: 10px;
+  }
+}
+
+.head {
+  gap: 50px;
+}
+
+.links a:nth-child(3) {
+  color: white;
+  background-color: #ff2e2cff;
+  border-radius: 0px;
+  font-size: 12px;
+  padding: 5px 4px 2px;
+  display: flex;
+  justify-content: center;
+}
+
+.page {
+  background-image: url(../images/for_homepage1_2.jpeg);
+  height: 450px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+p {
+  text-align: center;
+  text-align-last: center;
+}
+
+.page h1,
+p {
+  color: white;
+
+}
+
+.page h1 {
+  font-size: 70px;
+  font-weight: 600;
+}
+
+.page p {
+  max-width: 510px;
+  font-size: 20px;
+  padding: 0 5px;
+  line-height: 30px;
+}
+
+.search {
+  display: flex;
+  margin-top: 20px;
+  position: relative;
+}
+
+.search i {
+  position: absolute;
+  left: 24px;
+  align-self: center;
+  color: grey;
+}
+
+input {
+  padding-left: 38px;
+  height: 50px;
+  width: 400px;
+}
+
+button {
+  color: white;
+  background-color: #ff2e2cff;
+  width: 80px;
+  padding: 5px;
+  cursor: pointer;
+  height: 50px;
+}
+
+input::placeholder {
+  padding-left: 21px;
+}
+
+.categories {
+  max-width: 1200px;
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+  font-size: 17px;
+  border-bottom: 1.5px solid;
+  padding-bottom: 10px;
+
+  a {
+    padding-right: 5px;
+  }
+}
+
+.freelencers {
+  background-color: rgba(240, 248, 255, 0.363);
+  max-width: 1220px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  gap: 8px;
+}
+
+.freelencers img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.all {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  border: 1px solid;
+  justify-content: center;
+  align-items: center;
+  padding: 14px;
+  box-shadow: 1px 1px 5px black;
+}
+
+.all a {
+
+  border-radius: 5px;
+  width: fit-content;
+  padding: 6px;
+  color: white;
+  background-color: #0241fbff;
+}
+
+.descr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.769);
+  display: flex;
+
+  flex-direction: column;
+  gap: 10px;
+
+  img {
+    margin-left: 5%;
+    height: 70px;
+    padding: 15px 4px;
+  }
+}
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.cont1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  p {
+    align-self: center;
+  }
+}
+
+.cont {
+  max-width: 260px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 40px auto 0px;
+  gap: 20px;
+}
+
+.cont a {
+  text-align: center;
+  color: white;
+}
+
+a:active {
+  color: blue;
+}
+
+.cont:nth-child(4) {
+  flex-direction: row;
+  align-items: end;
+  font-size: 30px;
+
+  i {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    color: white;
+    font-size: 23px;
+
+    background-color: rgba(0, 162, 255, 0.482);
+    padding: 4px;
+    margin-right: 5px;
+  }
+}
+
+@media (max-width:800px) {
+
+  .head,
+  .links,
+  .categories,
+  .foot,
+  .search,
+  .freelencers {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+
+  input,
+  button {
+    margin: 10px auto 0;
+  }
+
+  .foot,
+  .first {
+    img {
+
+      height: 38px;
+    }
+
+    a,
+    img {
+      margin: 0;
+    }
+
+    margin: 0;
+    padding:20px;
+
+    .cont,
+    .links,
+    .head {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  .search i {
+    left: 30px;
+    top: 27px;
+  }
+
+  .page {
+    h1 {
+      font-weight: 300;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .all {
+
+    margin: 30px auto 0;
+  }
+
+  .head {
+    align-items: first baseline;
+  }
+
+  .links {
+    align-items: last baseline;
+  }
+
+  .first {
+    min-height: 150px;
+    justify-content: space-between;
+  }
+
+}
+
+@media (min-width:801px) and (max-width:1000px) {
+
+  .all {
+    width: 46%;
+    margin: 30px 3px 0;
+  }
+
+
+}
