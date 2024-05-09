@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,18 +18,21 @@
                 </div>
                 <div class="content">
                     <h2>Sign Up</h2>
-                    <form action="">
-
-                        <label for="userName">UserName</label>
-                        <input type="text" placeholder="Username" id="userName" required maxlength="100" minlength="10">
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <label for="userName">USERNAME</label>
+                        {{form.username}}{{ form.username.errors }}
+                        <!--<input type="text" placeholder="Username" id="userName" required maxlength="100" minlength="10">-->
                         <label for="email">EMAIL</label>
-                        <input type="email" placeholder="Email" id="email" required>
+                        {{form.email}}{{ form.email.errors }}
+                        <!--<input type="email" placeholder="Email" id="email" required>c-->
                         <label for="passWord1">PASSWORD</label>
-                        <input type="password" placeholder="Password" id="passWord1" minlength="8" maxlength="50"
-                            required>
+                        {{form.password1}}{{ form.password1.errors }}
+                        <!--<input type="password" placeholder="Password" id="passWord1" minlength="8" maxlength="50" required>-->
                         <label for="passWord2">CONFIRM PASSWORD</label>
-                        <input type="password" placeholder="Confirm Password" id="passWord2" minlength="8"
-                            maxlength="50" required>
+                        {{form.password2}}{{ form.password2.errors }}
+                        <!--<input type="password" placeholder="Confirm Password" id="passWord2" minlength="8"
+                            maxlength="50" required>-->
                         <div class="remember">
                             <div class="lab">
                                 <input type="checkbox" id="ch">
@@ -41,8 +45,10 @@
                         <p class="first">OR</p>
                     </form>
 
-
-                    <p class="sign" id="green">Already Registered?<a href="Login.html">Login</a></p>
+                    {% for message in messages %}
+                    <p id="messages">{{message}}</p>
+                    {% endfor %}
+                    <p class="sign" id="green">Already Registered?<a href="{% url 'login' %}">Login</a></p>
                 </div>
 
             </div>

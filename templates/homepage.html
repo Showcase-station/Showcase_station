@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,14 +20,27 @@
             <img src="../static/images/logo.png" alt="">
             <a href="#">How it Works</a>
         </div>
+        <style>
+            .hello-msg {
+                font-size: 18px;
+                color: brown;
+                margin-right: 20px;
+            }
+        </style>
+        {% if user.is_authenticated %}
+        <span class="hello-msg">HELLO , {{ user.username }}</span>
+        <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
         <div class="links">
-            <a href="Login.html">Log In</a>
-            <a href="SignUp.html">Sign Up</a>
-            <a href="form.html">Submit to showcase</a>
+            <a href="{% url 'login' %}">Log In</a>
+            <a href="{% url 'signup' %}">Sign Up</a>
+
         </div>
+        {% endif %}
+
     </div>
     <div class="page">
-        <h1>Freelancer Showcase</h1>
+        <h1>Showcase Station</h1>
         <p>Explore the best creative freelancers from the world's
             emerging showcasing platform.</p>
         <div class="search">
