@@ -1,0 +1,29 @@
+- From the library : django.apps , We use the class/methode/function: AppConfig
+- From the library : django.db , We use the class/methode/function: models
+- From the library : django.contrib.auth , We use the class/methode/function: get_user_model
+- From the library : django.db.models.signals , We use the class/methode/function: post_save
+- From the library : django.dispatch , We use the class/methode/function: receiver
+- From the library : django.shortcuts , We use the class/methode/function: render
+- We use the library : sys
+- We use the library : os
+- From the library : django.core.wsgi , We use the class/methode/function: get_wsgi_application
+- From the library : django.contrib , We use the class/methode/function: admin
+- From the library : django.urls , We use the class/methode/function: path and include
+- From the library : pathlib , We use the class/methode/function: Path
+- From the library : django.core.asgi , We use the class/methode/function: get_asgi_application
+- From the library : django.shortcuts , We use the class/methode/function: redirect
+- From the library : django.http , We use the class/methode/function: HttpResponse
+- From the library : django.forms , We use the class/methode/function: inlineformset_factory
+
+- From the library : django.contrib.auth , We use the class/methode/function: authenticate, login and logout
+- From the library : django.contrib.auth , We use the class/methode/function: authenticate, login as auth_login
+- From the library : django.contrib , We use the class/methode/function: messages
+- From the library : django.contrib.auth.decorators , We use the class/methode/function: login_required
+
+- From the library : django.urls , We use the class/methode/function: reverse_lazy
+- From the library : .forms , We use the class/methode/function: CustomUserCreationForm
+- From the library : django.views.generic , We use the class/methode/function: CreateView
+- From the library : django.test , We use the class/methode/function: TestCase and Client
+- From the library : django , We use the class/methode/function: forms
+- From the library : django.contrib.auth.forms , We use the class/methode/function: UserCreationForm
+- From the library : django.contrib.auth.models , We use the class/methode/function: User

@@ -50,22 +50,46 @@
 
         </div>
     </div>
+
+    <style>
+        .categories a {
+            font-size: 0.8em;
+            margin-right: 10px;
+            /* Adjust as needed */
+            /* Adjust as needed */
+        }
+    </style>
     <div class="categories">
-        <a href="#">All</a>
-        <a href="#">Development & IT</a>
-        <a href="#">Design</a>
-        <a href="#">Writting</a>
-        <a href="#">Marketing</a>
-        <a href="#">Translation</a>
-        <a href="#">Legal</a>
-        <a href="#">Photography</a>
-        <a href="#">Data Science</a>
-        <a href="#">Engineering&Architecture</a>
+        <a href="{% url 'homepage' %}">All</a>
+        <a href="{% url 'homepage_with_category' 'Development and IT' %}">Development and IT</a>
+        <a href="{% url 'homepage_with_category' 'Design and Creative' %}">Design and Creative</a>
+        <a href="{% url 'homepage_with_category' 'Writing and Copywriting' %}">Writing and Copywriting</a>
+        <a href="{% url 'homepage_with_category' 'Sales and Marketing' %}">Sales and Marketing</a>
+        <a href="{% url 'homepage_with_category' 'Translation & caption' %}">Translation & caption</a>
+        <a href="{% url 'homepage_with_category' 'Legal' %}">Legal</a>
+        <a href="{% url 'homepage_with_category' 'Engineering and Architecture' %}">Engineering and Architecture</a>
+        <a href="{% url 'homepage_with_category' 'Data Science and Analysis' %}">Data Science and Analysis</a>
+        <a href="{% url 'homepage_with_category' 'Photography' %}">Photography</a>
+        <a href="{% url 'homepage_with_category' 'Teaching and Tutoring' %}">Teaching and Tutoring</a>
     </div>
 
-    <div class="freelencers">
-        <script src="main.js"></script>
+    {% for f in freelancers %}
+    <div class="all">
+        {% if f.photo_id %}
+        <img src="{{ f.photo_id.url }}" alt="">
+        {% endif %}
+        <div class="description">
+            {% if f.firstname and f.lastname %}
+            <h1>{{ f.firstname }} {{ f.lastname }}</h1>
+            {% endif %}
+            {% if f.bio %}
+            <p>{{ f.bio }}</p>
+            {% endif %}
+        </div>
     </div>
+    {% endfor %}
+
+
     <footer>
         <div class="foot">
             <div class="cont">

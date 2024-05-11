@@ -149,6 +149,19 @@ input::placeholder {
   overflow: hidden;
 }
 
+.freelancer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.bio .all {
+  flex-basis: calc(33.3333% - 10px);
+  /* Adjust as needed */
+  margin-bottom: 20px;
+  /* Adjust as needed */
+}
+
 .all {
   display: flex;
   flex-direction: column;
@@ -158,6 +171,11 @@ input::placeholder {
   align-items: center;
   padding: 14px;
   box-shadow: 1px 1px 5px black;
+
+  p {
+    color: #000000;
+    /* Change this to the color you want */
+  }
 }
 
 .all a {

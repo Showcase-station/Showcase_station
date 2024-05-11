@@ -18,11 +18,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from accounts.views import signup, login, logoutUser, home
+from freelancers.views import form
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", home, name="homepage"),
     path("signup/", signup.as_view(), name="signup"),
     path("login/", login, name="login"),
     path("logout/", logoutUser, name="logout"),
-]
+    path("form/", form, name="form"),
+    path("", home, name="homepage"),
+    path("<str:category>/", home, name="homepage_with_category"),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

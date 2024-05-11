@@ -53,7 +53,7 @@ a {
 }
 
 .page {
-  background-image: url(../images/for_homepage1_2.jpeg);
+  background-image: url("../images/for_homepage1_2.b98fe48fdfdd.jpeg");
   height: 450px;
   background-size: cover;
   display: flex;
@@ -155,21 +155,12 @@ input::placeholder {
   justify-content: space-between;
 }
 
-
 .bio .all {
   flex-basis: calc(33.3333% - 10px);
   /* Adjust as needed */
   margin-bottom: 20px;
   /* Adjust as needed */
 }
-
-.all {
-  flex-basis: calc(33.33% - 10px);
-  /* Adjust as needed */
-  margin-bottom: 20px;
-  /* Adjust as needed */
-}
-
 
 .all {
   display: flex;

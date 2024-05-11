@@ -1,35 +1,38 @@
-let items = [ ["https://th.bing.com/th/id/OIP.GcVozC2mx4xxjhymSSc1LAHaE7?rs=1&pid=ImgDetMain","Akchiche Mohamed Aymen" , "WEB DEVELOPER for 2years"],
-  ["https://th.bing.com/th/id/OIP.fDRWmjfSGQzm4IiZaBC9dAHaFd?w=1000&h=738&rs=1&pid=ImgDetMain","TONI KROOS","MOBILE DEVELOPER for 8years"],
-  ["https://th.bing.com/th/id/OIP.fDRWmjfSGQzm4IiZaBC9dAHaFd?w=1000&h=738&rs=1&pid=ImgDetMain","TONI KROOS","MOBILE DEVELOPER for 3years"],
-  ["https://th.bing.com/th/id/OIP.fDRWmjfSGQzm4IiZaBC9dAHaFd?w=1000&h=738&rs=1&pid=ImgDetMain","TONI KROOS","MOBILE DEVELOPER for 5years"],
-  ["https://th.bing.com/th/id/OIP.fDRWmjfSGQzm4IiZaBC9dAHaFd?w=1000&h=738&rs=1&pid=ImgDetMain","TONI KROOS","MOBILE DEVELOPER for 6years"],
-  ["https://th.bing.com/th/id/OIP.fDRWmjfSGQzm4IiZaBC9dAHaFd?w=1000&h=738&rs=1&pid=ImgDetMain","TONI KROOS","DESKTOP DEVELOPER for 1year"],
-  ["https://th.bing.com/th/id/OIP.fDRWmjfSGQzm4IiZaBC9dAHaFd?w=1000&h=738&rs=1&pid=ImgDetMain","TONI KROOS","MOBILE DEVELOPERfor 2years"],
-  ["https://th.bing.com/th/id/OIP.fDRWmjfSGQzm4IiZaBC9dAHaFd?w=1000&h=738&rs=1&pid=ImgDetMain","TONI KROOS","MOBILE DEVELOPER for 4 years"],
-  ["https://th.bing.com/th/id/OIP.fDRWmjfSGQzm4IiZaBC9dAHaFd?w=1000&h=738&rs=1&pid=ImgDetMain","TONI KROOS","MOBILE DEVELOPER for 3 years"]
-]
-for(let i = 0 ; i < items.length ; i++){
-    document.write(`<div class="all">`);
-        document.write(`<div class="image">`);
-            document.write(`<img src=${items[i][0]} onload="1">`)
-        document.write(`</div>`);
-        document.write(`<div class="descr">`);
+let items = [ /* your items array */];
 
-            document.write(`<h1>${items[i][1]}</h1>`)
-            document.write(`<h5>${items[i][2]}</h5>`)
-            document.write(`<a href="#">View Profile</a>`);
-        document.write(`</div>`);   
-    document.write(`</div>`);
+let container = document.querySelector('.freelancers');
+
+for (let i = 0; i < items.length; i++) {
+    let freelancerDiv = document.createElement('div');
+    freelancerDiv.className = 'all';
+
+    let imageDiv = document.createElement('div');
+    imageDiv.className = 'image';
+
+    let img = document.createElement('img');
+    img.src = items[i][0];
+    imageDiv.appendChild(img);
+
+    let descrDiv = document.createElement('div');
+    descrDiv.className = 'descr';
+
+    let h1 = document.createElement('h1');
+    h1.textContent = items[i][1];
+    descrDiv.appendChild(h1);
+
+    let h5 = document.createElement('h5');
+    h5.textContent = items[i][2];
+    descrDiv.appendChild(h5);
+
+    let a = document.createElement('a');
+    a.href = '#';
+    a.textContent = 'View Profile';
+    descrDiv.appendChild(a);
+
+    freelancerDiv.appendChild(imageDiv);
+    freelancerDiv.appendChild(descrDiv);
+
+    container.appendChild(freelancerDiv);
 }
-//-----------------------------------------------------------------------------------------------
-let func = _ => 13;
-let sum= (a,b)=>a+b;
-console.log(func());
-console.log(sum(12,3));
-let sumArray = (...arr)=>{
-    let result = 0 ;
-    for(let k  = 0 ; k < arr.length ; k++)
-        result+=arr[k];
-    return result;
-}
-console.log(sumArray(10,20,30));
+
+

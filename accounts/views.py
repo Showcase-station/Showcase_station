@@ -1,7 +1,3 @@
-from django.shortcuts import render
-
-# Create your views here.
-
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.forms import inlineformset_factory
@@ -13,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here .
 from .models import *
+from freelancers.models import Freelancer
 
 # from .forms import OrderForm, CreateUserForm
 
@@ -54,5 +51,11 @@ def logoutUser(request):
     return render(request, "homepage.html")
 
 
-def home(request):
-    return render(request, "homepage.html")
+def home(request, category=None):
+    if category is not None:
+        freelancers = Freelancer.objects.filter(categories__name=category)
+    else:
+        freelancers = Freelancer.objects.all()
+    return render(request, "homepage.html", {"freelancers": freelancers})
+
+    # return render(request, "homepage.html")
