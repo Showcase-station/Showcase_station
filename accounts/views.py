@@ -25,10 +25,14 @@ class signup(CreateView):  # Renamed from SignUpView to Signup
     success_url = reverse_lazy("login")
     template_name = "registration/signup.html"
 
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login as auth_login  # Import the login function with an alias
+from django.contrib import messages
+
 
 def login(request):
     if request.user.is_authenticated:
-        return redirect("homepage")
+        return redirect("homepage")  # Redirect to homepage if already logged in
     else:
         if request.method == "POST":
             username = request.POST.get("username")
@@ -36,12 +40,11 @@ def login(request):
             user = authenticate(request, username=username, password=password)
 
             if user is not None:
-                auth_login(request, user)
-                return redirect("homepage")
+                auth_login(request, user)  # Use the imported login function
+                return redirect("homepage")  # Redirect to homepage upon successful login
             else:
-                messages.info(request, " Username OR password is incorrect ")
-        context = {}
-        return render(request, "registration/login.html", context)
+                messages.error(request, "Username or password is incorrect")
+        return render(request, "registration/login.html")
 
 
 @login_required(login_url="login")
@@ -58,4 +61,4 @@ def home(request, category=None):
         freelancers = Freelancer.objects.all()
     return render(request, "homepage.html", {"freelancers": freelancers})
 
-    # return render(request, "homepage.html")
+

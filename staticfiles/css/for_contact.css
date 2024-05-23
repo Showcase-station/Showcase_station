@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Dubai&display=swap');
+
+body {
+    font-family: 'Helvetica', 'Dubai', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 50px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.container {
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    background: url(../../templates/help.html);
+}
+
+h1 {
+    text-align: center;
+    color: #0241fb;
+    margin-top: 90px;
+    font-family: 'Dubai', 'Helvetica', sans-serif;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.info-item {
+    margin-bottom: 15px;
+}
+
+.info-item h2 {
+    color: #0241fb;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    font-family: 'Dubai', 'Helvetica', sans-serif;
+}
+
+.info-item p {
+    font-size: 1em;
+    color: #333;
+}
+
+.info-item a {
+    color: #ff2e2c;
+    text-decoration: none;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+.contact-form {
+    margin-top: 20px;
+}
+
+.contact-form h2 {
+    color: #0241fb;
+    margin-bottom: 15px;
+    font-family: 'Dubai', 'Helvetica', sans-serif;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+button {
+    background-color: #0241fb;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Dubai', 'Helvetica', sans-serif;
+}
+
+button:hover {
+    background-color: #0233c9;
+}

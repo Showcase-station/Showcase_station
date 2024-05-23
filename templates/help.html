@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help and Support</title>
+    <link rel="stylesheet" href="{% static 'css/for_help.css' %}">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Help and Support</h1>
+
+        <!-- Introduction -->
+        <section class="introduction">
+            <h2>Introduction</h2>
+            <p>Welcome to the Showcase Station Help and Support page. Here, you can find answers to common questions,
+                contact information for our support team, and links to our privacy policy and terms of service. We are
+                here to help you discover and connect with talented freelancers around the world.</p>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="contact-info">
+            <h2>Contact Information</h2>
+            <div class="info-item">
+                <h3>Email</h3>
+                <p><a href="khazene.nidhal@univ-ouargla.dz">khazene.nidhal@univ-ouargla.dz</a></p>
+            </div>
+            <div class="info-item">
+                <h3>Physical Address</h3>
+                <p>Ave 1er Novembre 1954, Ouargla 30000</p>
+            </div>
+            <div class="info-item">
+                <h3>Hours of Operation</h3>
+                <p>Saturday to Wednesday, 9 AM - 5 PM</p>
+            </div>
+        </section>
+
+        <!-- FAQs -->
+        <section class="faqs">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How do I sign up as a freelancer?</h3>
+                <p>To sign up as a freelancer, click on the "Sign Up" button on our homepage and fill out the required
+                    information. Once your profile is complete, you can start showcasing your work and connecting with
+                    clients.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How can I contact a freelancer?</h3>
+                <p>You can contact a freelancer by visiting their portfolio page and choose one of the social media
+                    platform.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What services do freelancers offer?</h3>
+                <p>Freelancers on Portfolio Showcase offer a wide range of services, including graphic design, web
+                    development, writing, marketing, and more. You can browse through different categories to find the
+                    right freelancer for your project.</p>
+            </div>
+        </section>
+
+        <!-- Privacy Policy, Terms of Service, and Contact Us -->
+        <section class="legal">
+            <h2>Legal</h2>
+            <p><a href="{% url 'privacy' %}">Privacy Policy</a></p>
+            <p><a href="{% url 'terms' %}">Terms of Service</a></p>
+            <p><a href="{% url 'contact' %}">Contact Us</a></p>
+        </section>
+
+        <!-- Social Media Links -->
+        <section class="social-media">
+            <h2>Connect with Us</h2>
+            <p><a href="https://www.linkedin.com/in/nidhal-khazene/" target="_blank">Linkedin</a></p>
+        </section>
+    </div>
+</body>
+
+</html>

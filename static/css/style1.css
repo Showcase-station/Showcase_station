@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+[id^="yourBtn"] {
+
+    width: 150px;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    border: 1px dashed #BBB;
+    text-align: center;
+    background-color: blue;
+    cursor: pointer;
+  }
+  button{
+    width: 200px;
+    height: 70px;
+    color: white;
+    background-color: blue;
+    cursor: pointer;
+  }

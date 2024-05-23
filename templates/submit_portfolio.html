@@ -1,0 +1,205 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Portfolio</title>
+  <link rel="stylesheet" href="{% static 'css/for_homepage1_2.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/for_form.css' %}">
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="head">
+    <img src="{% static 'images/logo.png' %}" alt="">
+  </div>
+  <div class="title">
+    <h1>Showcase Time</h1>
+    <p>Let's kickstart this event with a spark of portfolio. Share your journey, your best projects—let's spread their
+      brilliance far and wide.</p>
+  </div>
+  <div class="portfolio">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h1>Submit your portfolio to showcase</h1>
+      <div class="sec">
+        <div class="name1">
+          <label for="{{ form.firstname.id_for_label }}">First Name </label>
+          <i class="fa-solid fa-user"></i>
+          {{ form.firstname }}{{ form.firstname.errors }}
+        </div>
+        <div class="name1">
+          <label for="{{ form.lastname.id_for_label }}">Last Name</label>
+          <i class="fa-solid fa-user"></i>
+          {{ form.lastname }}{{ form.lastname.errors }}
+        </div>
+      </div>
+      <div class="info">
+        <label for="{{ form.bio.id_for_label }}">Bio</label>
+        {{ form.bio }} {{ form.bio.errors }}
+      </div>
+      <div class="info">
+        <label for="{{ form.description.id_for_label }}">Description</label>
+        {{ form.description }} {{ form.description.errors }}
+      </div>
+      <div class="info">
+        <label for="{{ form.phone_number.id_for_label }}">Phone Number</label>
+        <i class="fa-solid fa-square-phone"></i>
+        {{ form.phone_number }}{{ form.phone_number.errors }}
+      </div>
+      <div class="info">
+        <label for="{{ form.email.id_for_label }}">Email</label>
+        <i class="fa-solid fa-envelope"></i>
+        {{ form.email }}{{ form.email.errors }}
+      </div>
+      <label for="">Upload your personal photo</label>
+      <div class="container">
+        <input type="file" id="{{ form.photo_id.id_for_label }}" name="{{ form.photo_id.html_name }}" accept="image/*"
+          hidden>
+        <div id="img-area">
+          <i class='bx bxs-cloud-upload icon'></i>
+          <h3>Upload Image</h3>
+          <p>Click or drag your images here to upload JPG, GIF, or PNG, Max. of 10MB, at least 840px x 840px resolution
+          </p>
+        </div>
+        <button id="select-image" type="button">Select Image</button>
+      </div>
+      <div class="cat">
+        <label for="{{ form.category.id_for_label }}">Select the category that best fits the Freelancer</label>
+        {{ form.categories }}
+      </div>
+      <div class="social">
+        <h2>Social Media Links</h2>
+        <div class="info">
+          <label for="{{ form.facebook_link.id_for_label }}">Facebook</label>
+          <i class="fa-brands fa-facebook-f" style="background-color: blue; "></i>
+          {{ form.facebook_link }}
+        </div>
+        <div class="info">
+          <label for="{{ form.instagram.id_for_label }}">Instagram</label>
+          <i class="fa-brands fa-instagram" style="background: linear-gradient(to bottom, violet , red, yellow);"></i>
+          {{ form.instagram_link }}
+        </div>
+        <div class="info">
+          <label for="{{ form.linkedin.id_for_label }}">LinkedIn</label>
+          <i class="fa-brands fa-linkedin-in" style=" background-color: rgba(0, 42, 255, 0.726);"></i>
+          {{ form.linkedin_link }}
+        </div>
+        <div class="info">
+          <label for="{{ form.whatsapp_link.id_for_label }}">Whatsapp</label>
+          <i class="fa-brands fa-whatsapp" style="background-color: rgba(0, 128, 32, 0.705);"></i>
+          {{ form.whatsapp_link }}
+        </div>
+        <div class="info">
+          <label for="{{ form.github_link.id_for_label }}">Github</label>
+          <i class="fa-brands fa-github" style="background-color: black;"></i>
+          {{ form.github_link }}
+        </div>
+        <div class="info">
+          <label for="{{ form.twitter_link.id_for_label }}">X</label>
+          <i class="fa-brands fa-x-twitter" style="background-color: black;"></i>
+          {{ form.twitter_link }}
+        </div>
+        <div class="info">
+          <label for="{{ form.behance_link.id_for_label }}">Behance</label>
+          <i class="fa-brands fa-behance" style="background-color: black;"></i>
+          {{ form.behance_link }}
+        </div>
+        <div class="info">
+          <label for="{{ form.telegram_link.id_for_label }}">Telegram</label>
+          <i class="fa-brands fa-telegram" style="background-color: #108ceb; color: white;"></i>
+          {{ form.telegram_link }}
+        </div>
+        <div class="info">
+          <label for="{{ form.viber_link.id_for_label }}">Viber</label>
+          <i class="fa-brands fa-viber" style="background-color: rgb(94, 9, 207); color: white;"></i>
+          {{ form.viber_link }}
+        </div>
+        <div class="info">
+          <label for="{{ form.skype_link.id_for_label }}">Skype</label>
+          <i class="fa-brands fa-skype" style=" background-color: #108ceb; color: white;"></i>
+          {{ form.skype_link }}
+        </div>
+        <div class="info">
+          <label for="{{ form.tiktok_link.id_for_label }}">Tiktok</label>
+          <i class="fa-brands fa-tiktok" style="background-color: black; color: white ;"></i>
+          {{ form.tiktok_link }}
+        </div>
+        <div class="info">
+          <label for="{{ form.youtube_link.id_for_label }}">Youtube</label>
+          <i class="fa-brands fa-youtube" style="background-color: red; color: white;"></i>
+          {{ form.youtube_link }}
+        </div>
+      </div>
+      <div>
+        <div class="educProject" style="border: none;">
+          <label>Project</label>
+          <button type="button" id="prg">Add Project</button>
+        </div>
+        <div class="projects" id="project">
+        </div>
+      </div>
+      <div>
+        <div class="educProject">
+          <label>Education</label>
+          <button id="add-education-btn" type="button">Add Education</button>
+        </div>
+
+        <div class="education-form" style="margin-top: 17px; display: block;">
+        </div>
+      </div>
+      <div>
+        <div class="certificate">
+          <label for="">Certificate</label>
+          <button id="add-certificate-btn" type="button">Add Certificate</button>
+        </div>
+
+        <div class="certificate-form">
+        </div>
+      </div>
+
+      <div class="upShow">
+        <button type="submit">Upload showcase</button>
+      </div>
+    </form>
+  </div>
+  <footer id="footer">
+    <div class="foot">
+      <div class="cont">
+        <a href="{% url 'about' %}">About Us</a>
+        <a href="{% url 'contact' %}">Contact us</a>
+        <a href="{% url 'how it works' %}">How it works</a>
+      </div>
+      <div class="cont">
+        <a href="{% url 'terms' %}">Terms</a>
+        <a href="{% url 'privacy' %}">Privacy policy</a>
+      </div>
+      <div class="cont">
+        <a href="{% url 'help' %}">Help and Support</a>
+      </div>
+      <div class="cont">
+        <a href="#"><i class="fa-brands fa-x-twitter" style="background-color : black"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in "></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f " style="background-color: rgba(36, 109, 234, 0.733);"></i></a>
+        <a href="#"> <i class="fa-brands fa-github " style="background-color : black"></i></a>
+      </div>
+    </div>
+    <div class="cont1">
+      <img src="{% static 'images/logo.png' %}">
+      <p>&copy; All Rights Reserved</p>
+    </div>
+  </footer>
+  <script src="{% static 'js/main1.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/test.js' %}"></script>
+  <script src="{% static 'js/main4.js' %}"></script>
+</body>
+
+</html>

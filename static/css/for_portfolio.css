@@ -1,0 +1,203 @@
+body { 
+     font-family: Arial, sans-serif; 
+     margin: 0; 
+     padding: 0; 
+     background-color:  rgb(240, 233, 233);/* White background to contrast with red text */ 
+    } 
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    
+    .container { 
+     max-width: 800px; 
+     margin: 0 auto; 
+     padding: 20px;
+     position: relative;
+     bottom: 150px;
+    } 
+    
+    .header { 
+        display: flex;
+        flex-direction: column;
+        padding: 60px 0 40px 50px;
+        margin-left:7px;
+        height: 300px;
+        padding-bottom: 20px;
+        background: linear-gradient(to right, #0241fbff, blueviolet );
+        color: #fff;
+        text-align: center;
+        border-bottom-right-radius: 350px;
+        font-size: 50px;
+        font-weight: 700px;
+    } 
+   
+    .profile { 
+     background-color: #fff; 
+     padding: 20px; 
+     border-radius: 8px; 
+     box-shadow: 0 2px 4px rgba(96, 82, 82, 0.1);
+
+    } 
+    
+    .profile-header { 
+     display: flex; 
+     align-items: center; 
+     margin-bottom: 20px; 
+    } 
+    i{
+        font-size: 20px;
+        margin-right: 9px;
+        width: 35px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        padding-top: 5px;
+    }
+
+    span  {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .profile-header img { 
+     width: 150px; 
+     height: 150px; 
+     border-radius: 50%; 
+     object-fit: cover; 
+     margin-right: 20px; 
+    } 
+    
+    .profile-info h2, .profile-info p, .bio h2, .description h2, .education h2, .certificates h2, .projects h2 { 
+      margin-bottom: 10px; 
+     font-style: italic;
+    } 
+    .profile-info h2{
+        font-size: 30px;
+    }
+    
+    .social-links { 
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+    } 
+    
+    .certificate img { 
+     width: 400px; 
+     height: 200px; 
+     margin-right: 0px; 
+     border-radius: 8px; 
+     object-fit: cover;
+    
+     box-shadow: 1px 1px 22px rgb(98, 98, 101);
+    }
+    .projects a {
+       color: #fff;
+       background-color: #ff2e2cff;
+       width: fit-content;
+       padding: 10px;
+       display: flex;
+       justify-content: center;
+       margin: 10px auto;
+       border-radius: 10px;
+    }
+    footer{
+        background-color: rgba(0, 0, 0, 0.769);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        img{
+          margin-left: 5%;
+          height: 70px;
+          padding: 15px 4px;
+          border-radius: 5px;
+        }
+        
+       }
+        footer .foot{
+          display: flex;
+          justify-content: space-between;
+       
+        }
+        footer .cont1{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          p{
+          align-self: center;
+            margin-right: 14px;
+          }
+         
+        }
+        footer .cont{
+          max-width: 260px;
+          font-size: 20px;
+          display: flex;
+          flex-direction: column;
+           margin: 40px auto 0px;
+         gap: 20px;
+        }
+        footer .cont a{
+          text-align: center;
+          color: white;
+        }
+        footer a:active{
+          color: blue;
+        }
+        
+        footer .cont:nth-child(4){
+          flex-direction: row;
+           align-items: end;
+          font-size: 30px;
+          i{
+            
+            width: 27px;
+            height: 27px;
+            border-radius: 50%;
+            color: white;
+            font-size: 23px;
+        
+            background-color: rgba(0, 162, 255, 0.482);
+            padding: 4px;
+            margin-right: 5px;
+          }
+        }
+        footer p{color: white;}
+
+        @media (max-width:800px){
+           .foot{
+             flex-direction: column;
+             gap: 5px;
+             justify-content: flex-start;
+             align-items: baseline;
+             padding-left: 20px ;
+           }
+         
+         
+           .foot {
+             img{
+           height: 38px;
+             }
+             a,img{margin: 0;}
+             margin: 0;
+             padding:20px;
+             .cont{
+             width: 100%;
+             margin: 0;
+             align-items: flex-start;
+           }
+           }
+           
+           footer   p{
+               font-size: 16px;
+             }
+             .container{position: static;}
+             .header{
+              border-radius: 0; 
+              font-size: 27px;
+              align-self: center;
+              margin-top: 0;
+            }
+            .profile-header{
+              flex-direction: column;
+            }
+         }

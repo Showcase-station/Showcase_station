@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Dubai&display=swap');
+
+body {
+    font-family: 'Helvetica', 'Dubai', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #0241fb;
+    margin-bottom: 20px;
+    font-family: 'Dubai', 'Helvetica', sans-serif;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #0241fb;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-family: 'Dubai', 'Helvetica', sans-serif;
+}
+
+h3 {
+    color: #0241fb;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    font-family: 'Dubai', 'Helvetica', sans-serif;
+}
+
+p {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #ff2e2c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.introduction, .contact-info, .faqs, .legal, .social-media {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.introduction p, .contact-info p, .faqs p, .legal p, .social-media p {
+    margin: 0;
+}
+
+.info-item, .faq-item {
+    margin-bottom: 15px;
+}

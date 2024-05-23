@@ -101,17 +101,18 @@ button:hover{
 }
 .remember{
     display: flex;
-    align-content: flex-start;
     justify-content: space-between;
+    align-items: center;
+    text-align-last: center;
+    margin-bottom: 10px;
 }
 .remember input{
     width: fit-content;
-    margin-right: 0;
     font-size: 6px;
     accent-color:   #ff2e2cff
 }
 a{
-    color:   rgba(255, 48, 44, 0.808)
+    color:   rgba(255, 48, 44, 0.808);
 }
 
  a:hover{
@@ -131,5 +132,9 @@ a{
     }
     .img{
         order: 2;
+    }
+    .remember{
+        justify-content: center;
+        text-align-last:left ;
     }
 }

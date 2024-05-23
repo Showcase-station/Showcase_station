@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Portfolio</title>
+
+    <link rel="stylesheet" href="{% static '../static/css/for_portfolio.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Freelancer Portfolio</h1>
+    </div>
+    <div class="container">
+        <section class="profile">
+            <div class="profile-header">
+                {% if freelancer.photo_id %}
+                <img src="{{ freelancer.photo_id.url }}" alt="Profile Photo">
+                {% endif %}
+                <div class="profile-info">
+                    <h2>{{ freelancer.firstname }} {{ freelancer.lastname }}</h2>
+                    <p><span>Nationality</span>: {{ freelancer.nationality }}</p>
+                    <p><span>Email</span>: {{ freelancer.email }}</p>
+                    <p><span>Phone</span>: {{ freelancer.phone_number }}</p>
+                    {% if freelancer.categories.exists %}
+                    <p><span>Categories</span>:
+                        {% for category in freelancer.categories.all %}
+                        {{ category.name }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                    {% endif %}
+                    <div class="social-links">
+                        {% if freelancer.facebook_link %}
+                        <a href="{{ freelancer.facebook_link }}"><i class="fa-brands fa-facebook"
+                                style="color: #1964e6; font-size: 30px;"></i> Facebook</a>
+                        {% endif %}
+                        {% if freelancer.linkedin_link %}
+                        <a href="{{ freelancer.linkedin_link }}"><i class="fa-brands fa-linkedin"
+                                style="color: #1a74ea; font-size: 30px;"></i> LinkedIn</a>
+                        {% endif %}
+                        {% if freelancer.whatsapp_link %}
+                        <a href="{{ freelancer.whatsapp_link }}"><i class="fa-brands fa-whatsapp"
+                                style="color: rgb(35, 148, 7); font-size: 30px;"></i> WhatsApp</a>
+                        {% endif %}
+                        {% if freelancer.github_link %}
+                        <a href="{{ freelancer.github_link }}"><i class="fa-brands fa-github"
+                                style="font-size: 30px;"></i> GitHub</a>
+                        {% endif %}
+                        {% if freelancer.instagram_link %}
+                        <a href="{{ freelancer.instagram_link }}"><i class="fa-brands fa-instagram"
+                                style="color:rgb(199, 22, 125); font-size: 30px;"></i> Instagram</a>
+                        {% endif %}
+                        {% if freelancer.twitter_link %}
+                        <a href="{{ freelancer.twitter_link }}"><i class="fa-brands fa-twitter"
+                                style="color: #1DA1F2; font-size: 30px;"></i> Twitter</a>
+                        {% endif %}
+                        {% if freelancer.behance_link %}
+                        <a href="{{ freelancer.behance_link }}"><i class="fa-brands fa-behance"
+                                style="color: #000000; font-size: 30px;"></i> Behance</a>
+                        {% endif %}
+                        {% if freelancer.telegram_link %}
+                        <a href="{{ freelancer.telegram_link }}"><i class="fa-brands fa-telegram"
+                                style="color: #328ae2; font-size: 30px;"></i> Telegram</a>
+                        {% endif %}
+                        {% if freelancer.youtube_link %}
+                        <a href="{{ freelancer.youtube_link }}"><i class="fa-brands fa-youtube"
+                                style="color: #f31616; font-size: 30px;"></i> YouTube</a>
+                        {% endif %}
+                        {% if freelancer.viber_link %}
+                        <a href="{{ freelancer.viber_link }}"><i class="fa-brands fa-viber"
+                                style="color: #4f1cc4; font-size: 30px;"></i> Viber</a>
+                        {% endif %}
+                        {% if freelancer.skype_link %}
+                        <a href="{{ freelancer.skype_link }}"><i class="fa-brands fa-skype"
+                                style="color: #24a0ff; font-size: 30px;"></i> Skype</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% if freelancer.bio%}
+            <div class="bio">
+                <h2>Bio</h2>
+                <p>{{ freelancer.bio }}</p>
+            </div>
+            {% endif %}
+            {% if freelancer.description%}
+            <div class="description">
+                <h2>Description</h2>
+                <p>{{ freelancer.description }}</p>
+            </div>
+            {% endif %}
+            {% if freelancer.educations.exists %}
+            <div class="education">
+                <h2>Education</h2>
+                <ul>
+                    {% for education in freelancer.educations.all %}
+                    <li>{{ education.education_description }} ({{ education.education_start_date }} -
+                        {% if education.education_end_date %}
+                        {{ education.education_end_date }}
+                        {% else %}
+                        Present
+                        {% endif %})
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            {% if freelancer.certificates.exists %}
+            <div class="certificates">
+                <h2>Certificates</h2>
+                <div class="certificate">
+                    {% for certificate in freelancer.certificates.all %}
+                    <img src="{{ certificate.certificate_image.url }}" alt="Certificate {{ forloop.counter }}">
+                    <p>{{ certificate.description }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+            {% if freelancer.projects.exists %}
+            <div class="projects">
+                <h2>Projects</h2>
+                {% for project in freelancer.projects.all %}
+                <div class="project">
+                    <h3>{{ project.project_name }}</h3>
+                    <p>{{ project.description }}</p>
+                    <a href="{{ project.project_file.url }}">View Project</a>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </section>
+    </div>
+
+    <footer id="footer">
+        <div class="foot">
+            <div class="cont">
+                <a href="{% url 'about' %}">About Us</a>
+                <a href="{% url 'contact' %}">Contact us</a>
+                <a href="{% url 'how it works' %}">How it works</a>
+            </div>
+            <div class="cont">
+                <a href="{% url 'terms' %}">Terms</a>
+                <a href="{% url 'privacy' %}">Privacy policy</a>
+            </div>
+            <div class="cont">
+                <a href="{% url 'help' %}">Help and Support</a>
+            </div>
+            <div class="cont">
+                <a href="#"><i class="fa-brands fa-x-twitter" style="background-color : black"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"
+                        style="background-color: rgba(36, 109, 234, 0.733);"></i></a>
+                <a href="#"><i class="fa-brands fa-github" style="background-color : black"></i></a>
+            </div>
+        </div>
+        <div class="cont1">
+            <img src="{% static '../static/images/logo.png' %}">
+            <p>&copy; All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+
+</html>
